@@ -18,9 +18,9 @@ That's it!
 3. Create a population of 15 different sets of noise (random numbers) we can apply directly to our network's weights;
 4. Run the CartPole simulation as normal, and once it's done, send the reward back to our network;
 5. The network logs the reward, resets the weights, then applies noise to the weights from one of our population;
-6. Once the network's logged 15 different rewards, it evolves the network and goes back to step 3.
+6. Once the network's logged 15 different rewards, it evolves the master_network and goes back to step 3.
 
-The evolving bit's just a case of multiplying our population (of 15 sets of noise) by the (normalised) rewards they achieved. So the best result of our 15 is strongly imprinted on the network ("Do more of this."), and the worst result is negatively imprinted ("Do less of that.")
+The evolving bit's just a case of multiplying our population (of 15 sets of noise) by the (normalised) rewards they achieved. So the best result of our 15 is strongly imprinted on the master network ("Do more of this."), and the worst result is negatively imprinted ("Do less of that.")
 
 I've only just started experimenting with ES, so this is a first attempt to design an implementation I find easy to work with.
 
