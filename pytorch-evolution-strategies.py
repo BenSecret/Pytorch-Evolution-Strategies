@@ -11,7 +11,7 @@ env.seed(1); torch.manual_seed(1); np.random.seed(1)
 
 class EvolutionStrategies(torch.nn.Module):
 	def __init__(self, inputs, outputs, target):
-		super(Simulation, self).__init__()
+		super(EvolutionStrategies, self).__init__()
 		hidden = 100
 		self.linear1 = torch.nn.Linear(inputs, hidden)
 		self.linear2 = torch.nn.Linear(hidden, outputs)
