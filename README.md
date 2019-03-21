@@ -3,9 +3,11 @@ A very simple implementation of Evolution Strategies with Pytorch and CartPole.
 
 ## How to use
 Initialise your model with the number of inputs and outputs you want, and the reward target for the particular task (this just helps with the adaptive learning rate, which is a work in progress).
+
 model = EvolutionStrategies(inputs=4, outputs=2, target=190)
 
 Update your model with its reward.
+
 model.log_reward(episode_reward)
 
 That's it!
