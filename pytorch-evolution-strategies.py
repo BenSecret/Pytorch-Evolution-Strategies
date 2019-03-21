@@ -42,8 +42,8 @@ class EvolutionStrategies(torch.nn.Module):
 
 	def add_noise_to_weights(self):
 		for i, param in enumerate(self.parameters()):
-			jittered = torch.from_numpy(self.sigma * self.population[self.counter][i]).float()
-			param.data = self.master_weights[i] + jittered
+			noise = torch.from_numpy(self.sigma * self.population[self.counter][i]).float()
+			param.data = self.master_weights[i] + noise
 		self.counter += 1
 
 	def log_reward(self, reward):
