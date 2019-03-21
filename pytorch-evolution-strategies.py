@@ -9,7 +9,7 @@ env = gym.make('CartPole-v0')
 env.seed(1); torch.manual_seed(1); np.random.seed(1)
 
 
-class Simulation(torch.nn.Module):
+class EvolutionStrategies(torch.nn.Module):
 	def __init__(self, inputs, outputs, target):
 		super(Simulation, self).__init__()
 		hidden = 100
@@ -74,7 +74,7 @@ class Simulation(torch.nn.Module):
 
 
 
-model = Simulation(inputs=4, outputs=2, target=190)
+model = EvolutionStrategies(inputs=4, outputs=2, target=190)
 state = env.reset()
 steps = 200
 episodes = 30000
