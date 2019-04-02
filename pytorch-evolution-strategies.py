@@ -99,4 +99,3 @@ for episode in range(episodes):
 	if np.mean(ave_reward) >= env.spec.reward_threshold:
 		print('Completed at episode: ', episode)
 		break
-
