@@ -4,15 +4,15 @@ A very simple implementation of Evolution Strategies with Pytorch and CartPole.
 ## How to use
 Initialise your model with the number of inputs and outputs you want, and the reward target for the particular task (this just helps with the adaptive learning rate, which is a work in progress):
 
-model = EvolutionStrategies(inputs=4, outputs=2, target=190)
+**model = EvolutionStrategies(inputs=4, outputs=2, target=190)**
 
 Get the recommended action based on the current state:
 
-torch.argmax(model.forward(torch.FloatTensor(state)))
+**torch.argmax(model.forward(torch.FloatTensor(state)))**
 
 Update your model with its reward:
 
-model.log_reward(episode_reward)
+**model.log_reward(episode_reward)**
 
 That's it.
 
