@@ -10,7 +10,7 @@ Update your model with its reward.
 
 model.log_reward(episode_reward)
 
-That's it!
+That's it.
 
 ## How it works
 1. Initialise a simple neural network;
