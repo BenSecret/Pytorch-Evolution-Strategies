@@ -1,6 +1,20 @@
 # Pytorch Evolution Strategies
 A very simple implementation of Evolution Strategies with Pytorch and CartPole.
 
+## Updated to solve CartPole quickly
+In its current form, this implementation of Evolution Strategies solves CartPole after 6 episodes (getting a perfect run by 106).
+
+As always, it depends on which environment seed is used – ensuring it gets the right start. This seems to be a big problem with most OpenAI challenges. However, this implementation works quite well across environments. But as a temporary 'fix' to help it generalise, I've added a Pestilence function:
+– Short_ma (moving average) and Long_ma track episode rewards, and if the trend is unfavourable (i.e. it's not converging on a solution) it kills the population off and starts again.
+
+Getting a good start has always been more important than I'd like with these challenges, so wiping the old population out is often much quicker than persisting down evolutionary blackholes.
+
+What's most promising about ES to me is not needing back-propagation. Presumably, you could stuff these models with any functions you want, and still converge on solutions. However, the issue with it getting stuck on bad solutions (that necessitates Pestilence) is not ideal, and something I'm sure could be better ironed out.
+
+Also, the sensitivity of things like the adaptive learning rate, in finding solutions at all, feels very ad-hoc. I'm puzzled why this approach isn't more robust and doesn't work better (despite getting some pretty decent scores here).
+
+However, I think there's limitless opportunity to modify how this system works and fix these problems. There are many lessons from genetics that can be applied directly here. I'd hope to get this system off the messy solutions I'm using here (or at least make them more elegant), and then start applying it to much more complex problems and experimental neural net functions.
+
 ## How to use
 Initialise your model with the number of inputs and outputs you want, and the reward target for the particular task (this just helps with the adaptive learning rate, which is a work in progress):
 
