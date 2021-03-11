@@ -13,7 +13,7 @@ What's most promising about ES to me is not needing back-propagation. Presumably
 
 Also, the sensitivity of things like the adaptive learning rate, in finding solutions at all, feels very ad-hoc. I'm puzzled why this approach isn't more robust and doesn't work better (despite getting some pretty decent scores here).
 
-However, I think there's limitless opportunity to modify how this system works and fix these problems. There are many lessons from genetics that can be applied directly here. I'd hope to get this system off the messy solutions I'm using here (or at least make them more elegant), and then start applying it to much more complex problems and experimental neural net functions.
+However, I think there's limitless opportunity to modify how this system works and fix these problems. There are many lessons from genetics that can be applied directly here. I'd hope to get this system off the messy solutions I'm using (or at least make them more elegant), and start applying it to much more complex problems and experimental neural net architectures.
 
 ## How to use
 Initialise your model with the number of inputs and outputs you want, and the reward target for the particular task (this just helps with the adaptive learning rate, which is a work in progress):
