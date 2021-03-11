@@ -79,8 +79,6 @@ class EvolutionStrategies(torch.nn.Module):
 		self.score_tracking.append(high_score)
 		self.learning_rate = (self.learning_rate*5 + (self.target - np.mean(self.score_tracking))*0.000005)/6
 		self.sigma = self.learning_rate * 10
-		# self.learning_rate *= 0.95
-		# self.sigma *= 0.95
 
 
 model = EvolutionStrategies(INPUTS, HIDDEN, OUTPUTS, TARGET, POPULATION)
